@@ -1,5 +1,5 @@
 import { PROMOTIONS } from '../../app/shared/PROMOTIONS';
 
-export const selectFeaturePromotion = () => {
+export const selectFeaturedPromotion = () => {
     return PROMOTIONS.find((promotion) => promotion.featured);
 }
