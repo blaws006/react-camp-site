@@ -14,18 +14,24 @@ import {
     ErrorMessage
 } from 'formik';
 import { validateCommentForm } from '../../utils/validateCommentForm'
+import { useDispatch } from 'react-redux';
+import { addComment } from './commentsSlice';
+import { validateUserLoginForm } from '../../utils/validateUserLoginForm';
 
 const CommentForm = ({ campsiteId }) => {
     const [modalOpen, setModalOpen] = useState(false);
+    const dispatch = useDispatch();
     const handleSubmit = (values) => {
         const {rating, author, commentText} = values;
         const comment = {
             campsiteId: parseInt(campsiteId),
             rating: rating,
             author: author,
-            text: commentText
+            text: commentText,
+            date: new Date(Date.now()).toISOString()
         }
         console.log(comment);
+        dispatch(addComment(comment));
         console.log(JSON.stringify(comment));
         setModalOpen(false);
     }
