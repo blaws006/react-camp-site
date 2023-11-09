@@ -16,7 +16,6 @@ import {
 import { validateCommentForm } from '../../utils/validateCommentForm'
 import { useDispatch } from 'react-redux';
 import { addComment } from './commentsSlice';
-import { validateUserLoginForm } from '../../utils/validateUserLoginForm';
 
 const CommentForm = ({ campsiteId }) => {
     const [modalOpen, setModalOpen] = useState(false);
