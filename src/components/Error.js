@@ -4,7 +4,7 @@ const Error = ({ errMsg }) => {
     
     return (
         <Col>
-            <h1>{errMsg}</h1>
+            <h4>{errMsg}</h4>
         </Col>
     );
 
